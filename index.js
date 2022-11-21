@@ -86,3 +86,32 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Global variables 
+
+var totMonths = 0;
+
+// Total number of months
+
+totMonths = finances.length
+
+
+// Net profit/losses over entire period
+
+// Average change in profit/losses
+
+// Greatest increase in profits
+
+// Greatest decrease in profit
+
+// Logged to console
+
+console.log (`
+Financial Analysis
+----------------------------
+Total Months: ${totMonths}
+Total:
+Average Change: $
+Greatest Increase in Profits:
+Greatest Decrease in Profits:
+`);
