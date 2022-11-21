@@ -88,15 +88,16 @@ var finances = [
 ];
 
 // Global variables 
-
 var totMonths = 0;
+var sumOfProfits = 0;
 
 // Total number of months
-
 totMonths = finances.length
 
-
 // Net profit/losses over entire period
+for (i = 0; i < finances.length; i++) {
+    sumOfProfits += finances[i][1];
+}
 
 // Average change in profit/losses
 
@@ -110,7 +111,7 @@ console.log (`
 Financial Analysis
 ----------------------------
 Total Months: ${totMonths}
-Total:
+Total: $${sumOfProfits}
 Average Change: $
 Greatest Increase in Profits:
 Greatest Decrease in Profits:
