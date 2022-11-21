@@ -20,7 +20,7 @@ N/a
 
 In order to view financial analysis results open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows) and navigate to the console tab. Alternative right clicking on the mouse or touchpad and selecting inspect will open DevTools.  Include screenshots as needed.
 
-![Screenshot of open Chrome DevTools, on console tab showing finance analysis results](url "./assets/images/finance_app_screenshot.png")
+![Screenshot of open Chrome DevTools, on console tab showing finance analysis results](./assets/images/finance_app_screenshot.PNG "Finance Application Screenshot")
 
 
 ## Credits
