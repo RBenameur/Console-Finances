@@ -90,16 +90,29 @@ var finances = [
 // Global variables 
 var totMonths = 0;
 var sumOfProfits = 0;
+var finAppMthDiff = finances;
+var diff = 0;
+var sumOfDiff = 0;
 
 // Total number of months
 totMonths = finances.length
 
-// Net profit/losses over entire period
 for (i = 0; i < finances.length; i++) {
+    // Net profit/losses over entire period
     sumOfProfits += finances[i][1];
+    
+    // Append diff month to month to finances
+   if (i > 0) {
+        diff = finAppMthDiff[i][1] - finAppMthDiff[i-1][1];
+        finAppMthDiff[i].push(diff);
+        sumOfDiff += finAppMthDiff[i][2];
+    }
+
 }
 
 // Average change in profit/losses
+
+var averageChange = sumOfDiff / (finAppMthDiff.length - 1);
 
 // Greatest increase in profits
 
@@ -112,7 +125,7 @@ Financial Analysis
 ----------------------------
 Total Months: ${totMonths}
 Total: $${sumOfProfits}
-Average Change: $
+Average Change: $${averageChange.toFixed(2)}
 Greatest Increase in Profits:
 Greatest Decrease in Profits:
 `);
