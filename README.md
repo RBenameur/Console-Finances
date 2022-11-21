@@ -16,7 +16,7 @@ N/a
 
 ## Usage
 
-[Access finance application](url "https://rbenameur.github.io/Console-Finances/")
+[Access finance application](https://rbenameur.github.io/Console-Finances "Link to deployed github page")
 
 In order to view financial analysis results open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows) and navigate to the console tab. Alternative right clicking on the mouse or touchpad and selecting inspect will open DevTools.  Include screenshots as needed.
 
