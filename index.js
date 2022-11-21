@@ -93,6 +93,8 @@ var sumOfProfits = 0;
 var finAppMthDiff = finances;
 var diff = 0;
 var sumOfDiff = 0;
+var greatestIncrease = [0, 0, 0];
+var greatestDecrease = [0, 0, 0];
 
 // Total number of months
 totMonths = finances.length
@@ -106,17 +108,19 @@ for (i = 0; i < finances.length; i++) {
         diff = finAppMthDiff[i][1] - finAppMthDiff[i-1][1];
         finAppMthDiff[i].push(diff);
         sumOfDiff += finAppMthDiff[i][2];
+        if (greatestIncrease[2] < finAppMthDiff[i][2]) {
+            // Greatest increase in profits
+            greatestIncrease = finAppMthDiff[i];
+        } else if (greatestDecrease[2] > finAppMthDiff[i][2]) {
+            // Greatest decrease in profit
+            greatestDecrease = finAppMthDiff[i];
+        };
     }
 
 }
 
 // Average change in profit/losses
-
 var averageChange = sumOfDiff / (finAppMthDiff.length - 1);
-
-// Greatest increase in profits
-
-// Greatest decrease in profit
 
 // Logged to console
 
@@ -126,6 +130,6 @@ Financial Analysis
 Total Months: ${totMonths}
 Total: $${sumOfProfits}
 Average Change: $${averageChange.toFixed(2)}
-Greatest Increase in Profits:
-Greatest Decrease in Profits:
+Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[2]})
+Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[2]})
 `);
