@@ -86,3 +86,50 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Global variables 
+var totMonths = 0;
+var sumOfProfits = 0;
+var finAppMthDiff = finances;
+var diff = 0;
+var sumOfDiff = 0;
+var greatestIncrease = [0, 0, 0];
+var greatestDecrease = [0, 0, 0];
+
+// Total number of months
+totMonths = finances.length
+
+for (i = 0; i < finances.length; i++) {
+    // Net profit/losses over entire period
+    sumOfProfits += finances[i][1];
+    
+    // Append diff month to month to finances
+   if (i > 0) {
+        diff = finAppMthDiff[i][1] - finAppMthDiff[i-1][1];
+        finAppMthDiff[i].push(diff);
+        sumOfDiff += finAppMthDiff[i][2];
+        if (greatestIncrease[2] < finAppMthDiff[i][2]) {
+            // Greatest increase in profits
+            greatestIncrease = finAppMthDiff[i];
+        } else if (greatestDecrease[2] > finAppMthDiff[i][2]) {
+            // Greatest decrease in profit
+            greatestDecrease = finAppMthDiff[i];
+        };
+    }
+
+}
+
+// Average change in profit/losses
+var averageChange = sumOfDiff / (finAppMthDiff.length - 1);
+
+// Logged to console
+
+console.log (`
+Financial Analysis
+----------------------------
+Total Months: ${totMonths}
+Total: $${sumOfProfits}
+Average Change: $${averageChange.toFixed(2)}
+Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[2]})
+Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[2]})
+`);
